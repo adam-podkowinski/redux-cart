@@ -2,7 +2,6 @@
 
 .cart-item {
   background-color: $darker;
-  border-radius: .4rem;
   width: 100%;
   padding: 1rem 2rem;
 }
@@ -32,11 +31,15 @@ p {
     border: 2px solid $primary;
     cursor: pointer;
     padding: 0 1rem;
-    border-radius: .3rem;
     align-items: center;
     justify-content: center;
     font-size: 1.4rem;
     font-weight: 500;
     display: flex;
+    transition: .2s all;
+
+    &:hover {
+      background-color: transparentize($color: $primary, $amount: .75);
+    }
   }
 }

@@ -11,9 +11,7 @@ const shopItem = {
 
 const ShopItem = () => {
   const dispatch = useDispatch();
-  const addToCart = () => {
-    dispatch(cartActions.addItem());
-  }
+  const addToCart = () => dispatch(cartActions.addItem());
 
   return (
     <div className={classes.shopItem}>

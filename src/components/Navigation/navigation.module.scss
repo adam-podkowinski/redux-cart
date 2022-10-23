@@ -28,13 +28,11 @@ $border: 4px solid;
     cursor: pointer;
     transition: .3s all;
     font-weight: 500;
-    border-radius: .3rem;
 
     .cartItems {
-      padding: .05rem .9rem;
-      background-color: white;
-      color: $primary;
-      border-radius: 20rem;
+      padding: 0 .5rem;
+      border: 2px dashed lighten($color: $primary, $amount: 30);
+      color: lighten($color: $primary, $amount: 30);
       transition: .3s all;
     }
 
@@ -45,6 +43,7 @@ $border: 4px solid;
 
       .cartItems {
         background-color: $primary;
+        border-color: $primary !important;
         color: $bright;
       }
     }
