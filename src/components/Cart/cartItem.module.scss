@@ -4,6 +4,10 @@
   background-color: $darker;
   width: 100%;
   padding: 1rem 2rem;
+
+  &:not(:last-of-type) {
+    border-bottom: 2px dashed $primary;
+  }
 }
 
 .heading {
