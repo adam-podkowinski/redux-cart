@@ -20,7 +20,10 @@ const shopItems = [
 const ShopItem = (item) => {
   const dispatch = useDispatch();
   const { price, description, title } = item;
-  const addToCart = () => dispatch(cartActions.addItem(item));
+
+  const addToCart = () => {
+    return dispatch(cartActions.addItem(item));
+  };
 
   return (
     <div className={classes.shopItem}>

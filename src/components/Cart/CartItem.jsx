@@ -4,6 +4,14 @@ import classes from './cartItem.module.scss';
 
 const CartItem = ({ id, price, quantity, title }) => {
   const dispatch = useDispatch();
+
+  const removeItemHandler = () => {
+    return dispatch(cartActions.removeItem(id));
+  }
+  const addItemHandler = () => {
+    return dispatch(cartActions.addItem({ id }));
+  };
+
   return (
     <li className={classes.cartItem}>
       <div className={classes.heading}>
@@ -15,8 +23,8 @@ const CartItem = ({ id, price, quantity, title }) => {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <p>x{quantity}</p>
         <div className={classes.actions}>
-          <button onClick={() => dispatch(cartActions.removeItem(id))}>-</button>
-          <button onClick={() => dispatch(cartActions.addItem({ id }))}>+</button>
+          <button onClick={removeItemHandler}>-</button>
+          <button onClick={addItemHandler}>+</button>
         </div>
       </div>
     </li>

@@ -1,0 +1,48 @@
+@import 'src/vars.scss';
+
+@keyframes transparency {
+  from {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.notification {
+  align-self: stretch;
+  display: grid;
+  box-sizing: content-box;
+  border: 5px solid $primary;
+  padding: 1rem;
+  border-bottom: 0;
+  place-items: center;
+  position: relative;
+  font-weight: bold;
+  font-size: 2rem;
+  overflow: visible;
+  animation: 3s transparency forwards ease;
+}
+
+@keyframes sizeAnim {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}
+
+.bar {
+  position: absolute;
+  bottom: 0;
+  height: 5px;
+  background-color: $primary;
+  justify-self: start;
+  animation: 2.5s sizeAnim forwards linear;
+}
