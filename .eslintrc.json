@@ -1,0 +1,22 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["airbnb", "plugin:react-redux/recommended", "prettier"],
+  "overrides": [],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react-redux"],
+  "rules": {
+    "no-plusplus": "off",
+    "no-param-reassign": [
+      "error",
+      {
+        "props": false
+      }
+    ]
+  }
+}

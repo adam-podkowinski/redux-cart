@@ -1,8 +1,8 @@
-@import 'src/vars';
+@import "src/vars";
 
 .cart {
   width: 50vw;
-  @media(max-width: 1400px) {
+  @media (max-width: 1400px) {
     width: 70vw;
   }
 
@@ -11,15 +11,18 @@
     text-align: center;
   }
 
-  @media(max-width: 1000px) {
-    width: 90vw;;
+  @media (max-width: 1000px) {
+    width: 90vw;
   }
   border: 3px solid $primary;
   margin-top: 3rem;
   padding: 1rem 2rem;
   background-color: black;
-  background-image:  linear-gradient(135deg, #FB257644 25%, transparent 25%), linear-gradient(225deg, #FB257644 25%, transparent 25%), linear-gradient(45deg, #FB257644 25%, transparent 25%), linear-gradient(315deg, #FB257644 25%, black 25%);
-  background-position:  10px 0, 10px 0, 0 0, 0 0;
+  background-image: linear-gradient(135deg, #fb257644 25%, transparent 25%),
+    linear-gradient(225deg, #fb257644 25%, transparent 25%),
+    linear-gradient(45deg, #fb257644 25%, transparent 25%),
+    linear-gradient(315deg, #fb257644 25%, black 25%);
+  background-position: 10px 0, 10px 0, 0 0, 0 0;
   background-size: 20px 20px;
   background-repeat: repeat;
 

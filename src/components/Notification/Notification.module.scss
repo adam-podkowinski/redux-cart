@@ -1,14 +1,20 @@
-@import 'src/vars.scss';
+@import "src/vars.scss";
 
-@keyframes transparency {
+$animDuration: 2.5s;
+
+@keyframes fadeIn {
   from {
     opacity: 0;
   }
-
-  50% {
+  to {
     opacity: 1;
   }
+}
 
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
   to {
     opacity: 0;
   }
@@ -17,16 +23,18 @@
 .notification {
   align-self: stretch;
   display: grid;
-  box-sizing: content-box;
+  position: fixed;
   border: 5px solid $primary;
   padding: 1rem;
   border-bottom: 0;
   place-items: center;
-  position: relative;
   font-weight: bold;
+  z-index: 2;
+  background-color: darken($primary, 50);
   font-size: 2rem;
   overflow: visible;
-  animation: 3s transparency forwards ease;
+  animation: fadeIn 1s forwards,
+    fadeOut calc($animDuration * 0.2) forwards calc($animDuration * 0.8);
 }
 
 @keyframes sizeAnim {
@@ -44,5 +52,5 @@
   height: 5px;
   background-color: $primary;
   justify-self: start;
-  animation: 2.5s sizeAnim forwards linear;
+  animation: $animDuration sizeAnim forwards linear;
 }

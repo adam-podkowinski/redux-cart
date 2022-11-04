@@ -1,4 +1,4 @@
-@import 'src/vars';
+@import "src/vars";
 
 .shop-item {
   padding: 1rem 2rem;
@@ -6,22 +6,22 @@
   p {
     font-size: 1.1rem;
     width: 75%;
-    letter-spacing: .5px;
+    letter-spacing: 0.5px;
     line-height: 1.6;
   }
 
   button {
     margin-top: auto;
     height: 3rem;
-    background-color: transparentize($primary, .5);
+    background-color: transparentize($primary, 0.5);
     border: 2px solid $primary;
     padding: 1rem 2rem;
     cursor: pointer;
     display: flex;
     font-weight: 600;
-    letter-spacing: .5px;
+    letter-spacing: 0.5px;
     align-items: center;
-    transition: .3s background-color;
+    transition: 0.3s background-color;
     &:hover {
       background-color: $primary;
     }
@@ -40,12 +40,12 @@
 
 .shop {
   width: 50vw;
-  @media(max-width: 1400px) {
+  @media (max-width: 1400px) {
     width: 70vw;
   }
 
-  @media(max-width: 1000px) {
-    width: 90vw;;
+  @media (max-width: 1000px) {
+    width: 90vw;
   }
 
   background-color: $darker;
