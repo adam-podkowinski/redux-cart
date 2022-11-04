@@ -18,13 +18,11 @@ const shopItems = [
   },
 ];
 
-const ShopItem = (item) => {
+function ShopItem(item) {
   const dispatch = useDispatch();
   const { price, description, title } = item;
 
-  const addToCart = () => {
-    return dispatch(cartActions.addItem(item));
-  };
+  const addToCart = () => dispatch(cartActions.addItem(item));
 
   return (
     <div className={classes.shopItem}>
@@ -34,13 +32,15 @@ const ShopItem = (item) => {
       </div>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <p>{description}</p>
-        <button onClick={addToCart}>Add to cart</button>
+        <button type="button" onClick={addToCart}>
+          Add to cart
+        </button>
       </div>
     </div>
   );
-};
+}
 
-const Shop = () => {
+function Shop() {
   return (
     <>
       <h1 style={{ marginBottom: "1rem", marginTop: "3rem" }}>
@@ -48,11 +48,17 @@ const Shop = () => {
       </h1>
       <div className={classes.shop}>
         {shopItems.map((item) => (
-          <ShopItem key={item.id} {...item} />
+          <ShopItem
+            key={item.id}
+            id={item.id}
+            title={item.title}
+            description={item.description}
+            price={item.price}
+            quantity={item.quantity}
+          />
         ))}
       </div>
     </>
   );
-};
-
+}
 export default Shop;

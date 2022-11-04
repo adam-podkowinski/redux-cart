@@ -5,7 +5,7 @@ import Cart from "./components/Cart/Cart";
 import Navigation from "./components/Navigation/Navigation";
 import Shop from "./components/Shop/Shop";
 
-export function App() {
+export default function App() {
   const cartVisible = useSelector(({ visible }) => visible);
   const cart = useSelector(({ items }) => items);
 

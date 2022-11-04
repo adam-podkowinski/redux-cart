@@ -4,11 +4,14 @@ import { cartActions } from "../../store";
 import Notification from "../Notification/Notification";
 import classes from "./navigation.module.scss";
 
-const Navigation = () => {
+function Navigation() {
   const dispatch = useDispatch();
-  const items = useSelector(({ items }) => items);
+  const shopItems = useSelector(({ items }) => items);
   const totalQuantity = () =>
-    Object.values(items).reduce((prev, current) => prev + current.quantity, 0);
+    Object.values(shopItems).reduce(
+      (prev, current) => prev + current.quantity,
+      0
+    );
   const [notify, setNotify] = useState(true);
 
   setTimeout(() => {
@@ -20,6 +23,7 @@ const Navigation = () => {
       {notify && <Notification />}
       <h1>Redux Cart</h1>
       <button
+        type="button"
         onClick={() => {
           dispatch(cartActions.toggleCart());
         }}
@@ -29,6 +33,6 @@ const Navigation = () => {
       </button>
     </nav>
   );
-};
+}
 
 export default Navigation;

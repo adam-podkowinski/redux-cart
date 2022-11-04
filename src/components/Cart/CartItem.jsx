@@ -1,16 +1,13 @@
 import { useDispatch } from "react-redux";
+import PropTypes from "prop-types";
 import { cartActions } from "../../store";
 import classes from "./cartItem.module.scss";
 
-const CartItem = ({ id, price, quantity, title }) => {
+function CartItem({ id, price, quantity, title }) {
   const dispatch = useDispatch();
 
-  const removeItemHandler = () => {
-    return dispatch(cartActions.removeItem(id));
-  };
-  const addItemHandler = () => {
-    return dispatch(cartActions.addItem({ id }));
-  };
+  const removeItemHandler = () => dispatch(cartActions.removeItem(id));
+  const addItemHandler = () => dispatch(cartActions.addItem({ id }));
 
   return (
     <li className={classes.cartItem}>
@@ -30,12 +27,23 @@ const CartItem = ({ id, price, quantity, title }) => {
       >
         <p>x{quantity}</p>
         <div className={classes.actions}>
-          <button onClick={removeItemHandler}>-</button>
-          <button onClick={addItemHandler}>+</button>
+          <button type="button" onClick={removeItemHandler}>
+            -
+          </button>
+          <button type="button" onClick={addItemHandler}>
+            +
+          </button>
         </div>
       </div>
     </li>
   );
+}
+
+CartItem.propTypes = {
+  price: PropTypes.number.isRequired,
+  id: PropTypes.number.isRequired,
+  quantity: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default CartItem;
