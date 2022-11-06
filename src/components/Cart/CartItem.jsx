@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import PropTypes from "prop-types";
-import { cartActions } from "../../store";
+import { cartActions } from "../../store/cart-slice";
 import classes from "./cartItem.module.scss";
 
 function CartItem({ id, price, quantity, title }) {

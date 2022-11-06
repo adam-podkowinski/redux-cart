@@ -20,21 +20,40 @@ $animDuration: 2.5s;
   }
 }
 
+.reset {
+  opacity: 1 !important;
+}
+
 .notification {
   align-self: stretch;
   display: grid;
   position: fixed;
   border: 5px solid $primary;
-  padding: 1rem;
+  bottom: 5%;
+  padding: 0.83rem 1rem;
   border-bottom: 0;
   place-items: center;
-  font-weight: bold;
+  transform: translateY(-50%);
+  font-weight: normal;
   z-index: 2;
-  background-color: darken($primary, 50);
-  font-size: 2rem;
+  background-color: transparentize(darken($primary, 50), 0.1);
+  width: 60vw;
+  @media (max-width: 768px) {
+    width: 90vw;
+  }
+  font-size: 1rem;
+  text-align: center;
   overflow: visible;
-  animation: fadeIn 1s forwards,
-    fadeOut calc($animDuration * 0.2) forwards calc($animDuration * 0.8);
+  animation: fadeIn 0.5s forwards,
+    fadeOut calc($animDuration * 0.2) forwards calc($animDuration * 0.9);
+}
+
+.error {
+  background-color: transparentize($color: #770000, $amount: 0.1);
+}
+
+.success {
+  background-color: transparentize($color: darken(green, 10), $amount: 0.1);
 }
 
 @keyframes sizeAnim {

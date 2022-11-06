@@ -3,7 +3,7 @@ import classes from "./cart.module.scss";
 import CartItem from "./CartItem";
 
 function Cart() {
-  const shopItems = useSelector(({ items }) => items);
+  const shopItems = useSelector(({ cart }) => cart.items);
   return (
     <div className={classes.cart}>
       <h1 className={classes.header}>Your shopping cart</h1>
